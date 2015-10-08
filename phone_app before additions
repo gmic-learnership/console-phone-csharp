@@ -1,0 +1,168 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace practise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string phone_number, new_num;
+          //  string new_number;
+            string Funi = "0726070685";
+            string Tinyiko = "0737397153";
+            string Prudence = "0720751453";
+            string DVT = "0117595930";
+
+            Console.WriteLine("\t\tWelcome to our telephone program");
+            Console.WriteLine("\t\t--------------------------------");
+            Console.WriteLine();
+
+            Console.WriteLine("Please enter a telephone number: ");
+            phone_number = Console.ReadLine();
+
+            while (phone_number == "")
+            {
+                Console.WriteLine("Please enter a telephone number: ");
+                phone_number = Console.ReadLine();
+            }
+
+                while (phone_number == "exit")
+            {
+                Console.WriteLine("\n\t\tGoodbye :)");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+            
+
+                Console.WriteLine("\nThe phone number you entered is " + phone_number + "\n");
+
+            //this for loop iterates through the characters of the phone number then strips it of separation characters
+
+            do
+            {
+                for (int i = 1; i < phone_number.Length; i++)
+
+                {
+
+                    if (phone_number.Contains('('))
+                    {
+                        new_num = phone_number.Remove(phone_number.IndexOf('('), 1);
+
+                        phone_number = new_num;
+
+                    }
+
+                    if (phone_number.Contains(')'))
+                    {
+                        new_num = phone_number.Remove(phone_number.IndexOf(')'), 1);
+                        phone_number = new_num;
+
+                    }
+
+                    if (phone_number.Contains('-'))
+                    {
+                        new_num = phone_number.Remove(phone_number.IndexOf('-'), 1);
+                        phone_number = new_num;
+
+                    }
+
+                    if (phone_number.Contains(' '))
+                    {
+                        new_num = phone_number.Remove(phone_number.IndexOf(' '), 1);
+                        phone_number = new_num;
+
+                    }
+
+                }
+
+                try
+                {
+                    int temp = Convert.ToInt32(phone_number);
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine("\nSorry, the number you entered is incorrect.");
+                    Console.WriteLine("Please enter a valid, numeric telephone number\n", e);
+                    Console.WriteLine("-------------------------------------------");
+                    phone_number = Console.ReadLine();
+
+                }
+
+                //this loop checks if the number is avalid 10 digit number then checks if its a number that falls in the list
+                // 011, 012, 072, 083, 073, 069
+
+                if (phone_number.Length == 10)
+                {
+                    //                new_number =Convert.ToInt32( phone_number);
+                    int temp = Convert.ToInt16(phone_number.Substring(0, 3));
+
+
+                    if (temp == 12 || temp == 11 || temp == 83 || temp == 72 || temp == 69 || temp == 73)
+                    {
+                        if (phone_number.CompareTo(Funi) == 0)
+                        {
+                            Console.WriteLine("\nYour number is valid. Please hold while we dial");
+                            Console.WriteLine("Dialing Funi ...\n...\n...");
+                            Console.WriteLine("Successfully dialed Funi");
+                        }
+
+                        else if (phone_number.CompareTo(Tinyiko) == 0)
+                        {
+                            Console.WriteLine("\nYour number is valid. Please hold while we dial");
+                            Console.WriteLine("Dialing Tinyiko ...\n...\n...");
+                            Console.WriteLine("Successfully dialed Tinyiko");
+                        }
+                        else if (phone_number.CompareTo(DVT) == 0)
+                        {
+                            Console.WriteLine("\nYour number is valid. Please hold while we dial");
+                            Console.WriteLine("Dialing DVT ...\n...\n...");
+                            Console.WriteLine("Successfully dialed DVT");
+                        }
+                        else if (phone_number.CompareTo(Prudence) == 0)
+                        {
+                            Console.WriteLine("\nYour number is valid. Please hold while we dial");
+                            Console.WriteLine("Dialing Prudence ...\n...\n...");
+                            Console.WriteLine("Successfully dialed Prudence");
+                        }
+                        else
+
+                        {
+                            Console.WriteLine("\nYour number is valid. Please hold while we dial");
+                            Console.WriteLine("Dialing " + phone_number + " ...\n...\n...");
+                            Console.WriteLine("Successfully dialed " + phone_number);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nSorry this number is invalid :( , please try to enter the number again\n");
+                        Console.WriteLine("================================================\n");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("\nSorry, you have entered an invalid number");
+                    Console.WriteLine("Please check your number and enter it again:(");
+                    Console.WriteLine("--------------------------------------------");
+                    // phone_number = Console.ReadLine();
+
+                }
+                Console.WriteLine("\nThanx for using our telephone service\n\nType 'exit' to exit or enter another number:");
+                Console.WriteLine("================================================\n");
+                phone_number = Console.ReadLine();
+
+
+            } while (phone_number != "exit");
+          
+                Console.WriteLine("\n\t\tGoodbye :)");
+                Console.ReadLine();
+                Environment.Exit(0);
+            
+        }
+    }
+}
