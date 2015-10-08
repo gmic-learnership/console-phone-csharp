@@ -1,0 +1,6 @@
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\bin\Debug\Phone.exe.config
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\bin\Debug\Phone.exe
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\bin\Debug\Phone.pdb
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\obj\Debug\Phone.csprojResolveAssemblyReference.cache
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\obj\Debug\Phone.exe
+c:\users\lmaboho\documents\visual studio 2015\Projects\Phone\Phone\obj\Debug\Phone.pdb
